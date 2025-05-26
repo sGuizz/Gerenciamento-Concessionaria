@@ -6,9 +6,12 @@ Guilherme Henrique Ceribelli de Jesus: 325100648
 Pedro Luiz Pereira Preto: 325100636
 Leandro da Veiga Soares: 325102514
 David Gama Sassi: 325101353
+Rafael Blanco: 325100861
 Arthur Barros Venancio: 325100414
 Ian Lima de Almeida: 3251022220
 Deivid Abade: 324200750
+Saulo Oliveira Reis: 325101936
+Pablo Henrique dos Santos Machado: 325102718
 */
 
 public class Main {
