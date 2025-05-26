@@ -8,6 +8,7 @@ Leandro da Veiga Soares: 325102514
 David Gama Sassi: 325101353
 Arthur Barros Venancio: 325100414
 Ian Lima de Almeida: 3251022220
+Deivid Abade: 324200750
 */
 
 public class Main {
