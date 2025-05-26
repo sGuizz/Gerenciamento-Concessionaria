@@ -1,6 +1,15 @@
 import java.util.*;
 import java.time.LocalDate;
 
+/*
+Guilherme Henrique Ceribelli de Jesus: 325100648
+Pedro Luiz Pereira Preto: 325100636
+Leandro da Veiga Soares: 325102514
+David Gama Sassi: 325101353
+Arthur Barros Venancio: 325100414
+Ian Lima de Almeida: 3251022220
+*/
+
 public class Main {
     private static List<Veiculo> veiculos = new ArrayList<>();
     private static List<Cliente> clientes = new ArrayList<>();

@@ -1,0 +1,605 @@
+Subject: [PATCH] Initial commit
+---
+Index: .gitattributes
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitattributes b/.gitattributes
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/.gitattributes	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,2 @@
++# Auto detect text files and perform LF normalization
++* text=auto
+Index: .gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/.gitignore	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,29 @@
++### IntelliJ IDEA ###
++out/
++!**/src/main/**/out/
++!**/src/test/**/out/
++
++### Eclipse ###
++.apt_generated
++.classpath
++.factorypath
++.project
++.settings
++.springBeans
++.sts4-cache
++bin/
++!**/src/main/**/bin/
++!**/src/test/**/bin/
++
++### NetBeans ###
++/nbproject/private/
++/nbbuild/
++/dist/
++/nbdist/
++/.nb-gradle/
++
++### VS Code ###
++.vscode/
++
++### Mac OS ###
++.DS_Store
+\ No newline at end of file
+Index: .idea/.gitignore
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/.gitignore b/.idea/.gitignore
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/.idea/.gitignore	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,8 @@
++# Default ignored files
++/shelf/
++/workspace.xml
++# Editor-based HTTP Client requests
++/httpRequests/
++# Datasource local storage ignored files
++/dataSources/
++/dataSources.local.xml
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/.idea/misc.xml	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,6 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectRootManager" version="2" project-jdk-name="openjdk-24" project-jdk-type="JavaSDK">
++    <output url="file://$PROJECT_DIR$/out" />
++  </component>
++</project>
+\ No newline at end of file
+Index: .idea/modules.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/modules.xml b/.idea/modules.xml
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/.idea/modules.xml	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,8 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<project version="4">
++  <component name="ProjectModuleManager">
++    <modules>
++      <module fileurl="file://$PROJECT_DIR$/Gerenciamento Concessionaria.iml" filepath="$PROJECT_DIR$/Gerenciamento Concessionaria.iml" />
++    </modules>
++  </component>
++</project>
+\ No newline at end of file
+Index: Gerenciamento Concessionaria.iml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/Gerenciamento Concessionaria.iml b/Gerenciamento Concessionaria.iml
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/Gerenciamento Concessionaria.iml	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,11 @@
++<?xml version="1.0" encoding="UTF-8"?>
++<module type="JAVA_MODULE" version="4">
++  <component name="NewModuleRootManager" inherit-compiler-output="true">
++    <exclude-output />
++    <content url="file://$MODULE_DIR$">
++      <sourceFolder url="file://$MODULE_DIR$/src" isTestSource="false" />
++    </content>
++    <orderEntry type="inheritedJdk" />
++    <orderEntry type="sourceFolder" forTests="false" />
++  </component>
++</module>
+\ No newline at end of file
+Index: src/Carro.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Carro.java b/src/Carro.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Carro.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,10 @@
++public class Carro extends Veiculo {
++    public Carro(String modelo, String fabricante, int ano) throws Exception {
++        super(modelo, fabricante, ano, "Carro");
++    }
++    @Override
++    public String toString() {
++        return "Carro - Modelo: " + getModelo() + ", Fabricante: " + getFabricante() +
++                ", Ano: " + getAnoFabricacao() + ", Status: " + getStatus();
++    }
++}
+Index: src/Cliente.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Cliente.java b/src/Cliente.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Cliente.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,30 @@
++public abstract class Cliente {
++    private String nome;
++    private String cpf;
++    private String contato;
++
++    public Cliente(String nome, String cpf, String contato) throws Exception {
++        if (!cpf.matches("\\d{11}")) {
++            throw new Exception("CPF inválido! Deve conter 11 dígitos numéricos.");
++        }
++        this.nome = nome;
++        this.cpf = cpf;
++        this.contato = contato;
++    }
++
++    public String getNome() { return nome; }
++    public void setNome(String nome) { this.nome = nome; }
++
++    public String getCpf() { return cpf; }
++    public void setCpf(String cpf) throws Exception {
++        if (!cpf.matches("\\d{11}")) {
++            throw new Exception("CPF inválido!");
++        }
++        this.cpf = cpf;
++    }
++
++    public String getContato() { return contato; }
++    public void setContato(String contato) { this.contato = contato; }
++
++    public abstract String toString();
++}
+Index: src/Main.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Main.java b/src/Main.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Main.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,245 @@
++import java.util.*;
++import java.time.LocalDate;
++
++public class Main {
++    private static List<Veiculo> veiculos = new ArrayList<>();
++    private static List<Cliente> clientes = new ArrayList<>();
++    private static List<Venda> vendas = new ArrayList<>();
++
++    private static Scanner sc = new Scanner(System.in);
++
++    public static void main(String[] args) {
++        int opcao = -1;
++        while (opcao != 11) {
++            try {
++                mostrarMenu();
++                opcao = Integer.parseInt(sc.nextLine());
++                switch (opcao) {
++                    case 1 -> cadastrarVeiculo();
++                    case 2 -> cadastrarCliente();
++                    case 3 -> editarVeiculo();
++                    case 4 -> editarCliente();
++                    case 5 -> deletarVeiculo();
++                    case 6 -> deletarCliente();
++                    case 7 -> listarVeiculos();
++                    case 8 -> listarClientes();
++                    case 9 -> realizarVenda();
++                    case 10 -> listarVendas();
++                    case 11 -> System.out.println("Saindo...");
++                    default -> System.out.println("Opção inválida!");
++                }
++            } catch (Exception e) {
++                System.out.println("Erro: " + e.getMessage());
++            }
++            System.out.println();
++        }
++        sc.close();
++    }
++
++    private static void mostrarMenu() {
++        System.out.println("1 - Cadastrar Veículo");
++        System.out.println("2 - Cadastrar Cliente (Pessoa Física / Jurídica)");
++        System.out.println("3 - Editar Veículo");
++        System.out.println("4 - Editar Cliente");
++        System.out.println("5 - Deletar Veículo");
++        System.out.println("6 - Deletar Cliente");
++        System.out.println("7 - Listar Veículos");
++        System.out.println("8 - Listar Clientes");
++        System.out.println("9 - Realizar Venda");
++        System.out.println("10 - Ver Histórico de Vendas");
++        System.out.println("11 - Sair");
++        System.out.print("Escolha uma opção: ");
++    }
++
++    private static void cadastrarVeiculo() throws Exception {
++        System.out.print("Tipo do veículo (Carro, Moto, Utilitário): ");
++        String tipo = sc.nextLine().trim();
++        System.out.print("Modelo: ");
++        String modelo = sc.nextLine();
++        System.out.print("Fabricante: ");
++        String fabricante = sc.nextLine();
++        System.out.print("Ano de fabricação: ");
++        int ano = Integer.parseInt(sc.nextLine());
++
++        Veiculo v;
++        switch (tipo.toLowerCase()) {
++            case "carro" -> v = new Carro(modelo, fabricante, ano);
++            case "moto" -> v = new Moto(modelo, fabricante, ano);
++            case "utilitário", "utilitario" -> v = new Utilitario(modelo, fabricante, ano);
++            default -> throw new Exception("Tipo de veículo inválido!");
++        }
++        veiculos.add(v);
++        System.out.println("Veículo cadastrado com sucesso!");
++    }
++
++    private static void cadastrarCliente() throws Exception {
++        System.out.print("Tipo do cliente (F - Pessoa Física, J - Pessoa Jurídica): ");
++        String tipo = sc.nextLine().trim().toUpperCase();
++        System.out.print("Nome: ");
++        String nome = sc.nextLine();
++        System.out.print("CPF/CNPJ (apenas números): ");
++        String cpf = sc.nextLine();
++        System.out.print("Contato: ");
++        String contato = sc.nextLine();
++
++        Cliente c;
++        if (tipo.equals("F")) {
++            c = new PessoaFisica(nome, cpf, contato);
++        } else if (tipo.equals("J")) {
++            c = new PessoaJuridica(nome, cpf, contato);
++        } else {
++            throw new Exception("Tipo de cliente inválido!");
++        }
++        clientes.add(c);
++        System.out.println("Cliente cadastrado com sucesso!");
++    }
++
++    private static void listarVeiculos() {
++        if (veiculos.isEmpty()) {
++            System.out.println("Nenhum veículo cadastrado.");
++            return;
++        }
++        for (int i = 0; i < veiculos.size(); i++) {
++            System.out.println((i + 1) + " - " + veiculos.get(i));
++        }
++    }
++
++    private static void listarClientes() {
++        if (clientes.isEmpty()) {
++            System.out.println("Nenhum cliente cadastrado.");
++            return;
++        }
++        for (int i = 0; i < clientes.size(); i++) {
++            System.out.println((i + 1) + " - " + clientes.get(i));
++        }
++    }
++
++    private static void realizarVenda() throws Exception {
++        if (veiculos.isEmpty() || clientes.isEmpty()) {
++            System.out.println("Cadastre veículos e clientes antes de realizar vendas.");
++            return;
++        }
++        listarVeiculos();
++        System.out.print("Escolha o número do veículo para venda: ");
++        int numVeiculo = Integer.parseInt(sc.nextLine()) - 1;
++        if (numVeiculo < 0 || numVeiculo >= veiculos.size()) throw new Exception("Veículo não existe!");
++        Veiculo veiculo = veiculos.get(numVeiculo);
++        if (veiculo.getStatus().equalsIgnoreCase("vendido")) {
++            System.out.println("Veículo já vendido.");
++            return;
++        }
++
++        listarClientes();
++        System.out.print("Escolha o número do cliente comprador: ");
++        int numCliente = Integer.parseInt(sc.nextLine()) - 1;
++        if (numCliente < 0 || numCliente >= clientes.size()) throw new Exception("Cliente não existe!");
++        Cliente cliente = clientes.get(numCliente);
++
++        veiculo.setStatus("vendido");
++        Venda venda = new Venda(veiculo, cliente);
++        vendas.add(venda);
++        System.out.println("Venda registrada com sucesso!");
++    }
++
++    private static void listarVendas() {
++        if (vendas.isEmpty()) {
++            System.out.println("Nenhuma venda registrada.");
++            return;
++        }
++        for (Venda v : vendas) {
++            System.out.println(v);
++        }
++    }
++
++    private static void editarVeiculo() throws Exception {
++        if (veiculos.isEmpty()) {
++            System.out.println("Nenhum veículo cadastrado.");
++            return;
++        }
++        listarVeiculos();
++        System.out.print("Escolha o número do veículo para editar: ");
++        int idx = Integer.parseInt(sc.nextLine()) - 1;
++        if (idx < 0 || idx >= veiculos.size()) throw new Exception("Veículo não existe!");
++
++        Veiculo v = veiculos.get(idx);
++        System.out.println("Editando veículo: " + v.getModelo());
++
++        System.out.print("Novo modelo (" + v.getModelo() + "): ");
++        String modelo = sc.nextLine();
++        if (!modelo.isBlank()) v.setModelo(modelo);
++
++        System.out.print("Novo fabricante (" + v.getFabricante() + "): ");
++        String fabricante = sc.nextLine();
++        if (!fabricante.isBlank()) v.setFabricante(fabricante);
++
++        System.out.print("Novo ano de fabricação (" + v.getAnoFabricacao() + "): ");
++        String anoStr = sc.nextLine();
++        if (!anoStr.isBlank()) {
++            int ano = Integer.parseInt(anoStr);
++            v.setAnoFabricacao(ano);
++        }
++        System.out.println("Veículo atualizado!");
++    }
++
++    private static void editarCliente() throws Exception {
++        if (clientes.isEmpty()) {
++            System.out.println("Nenhum cliente cadastrado.");
++            return;
++        }
++        listarClientes();
++        System.out.print("Escolha o número do cliente para editar: ");
++        int idx = Integer.parseInt(sc.nextLine()) - 1;
++        if (idx < 0 || idx >= clientes.size()) throw new Exception("Cliente não existe!");
++
++        Cliente c = clientes.get(idx);
++        System.out.println("Editando cliente: " + c.getNome());
++
++        System.out.print("Novo nome (" + c.getNome() + "): ");
++        String nome = sc.nextLine();
++        if (!nome.isBlank()) c.setNome(nome);
++
++        System.out.print("Novo CPF/CNPJ (" + c.getCpf() + "): ");
++        String cpf = sc.nextLine();
++        if (!cpf.isBlank()) c.setCpf(cpf);
++
++        System.out.print("Novo contato (" + c.getContato() + "): ");
++        String contato = sc.nextLine();
++        if (!contato.isBlank()) c.setContato(contato);
++
++        System.out.println("Cliente atualizado!");
++    }
++
++    private static void deletarVeiculo() throws Exception {
++        if (veiculos.isEmpty()) {
++            System.out.println("Nenhum veículo cadastrado.");
++            return;
++        }
++        listarVeiculos();
++        System.out.print("Escolha o número do veículo para deletar: ");
++        int idx = Integer.parseInt(sc.nextLine()) - 1;
++        if (idx < 0 || idx >= veiculos.size()) throw new Exception("Veículo não existe!");
++
++        Veiculo v = veiculos.get(idx);
++        if (v.getStatus().equalsIgnoreCase("vendido")) {
++            System.out.println("Não é possível deletar veículo vendido.");
++            return;
++        }
++
++        veiculos.remove(idx);
++        System.out.println("Veículo deletado.");
++    }
++
++    private static void deletarCliente() throws Exception {
++        if (clientes.isEmpty()) {
++            System.out.println("Nenhum cliente cadastrado.");
++            return;
++        }
++        listarClientes();
++        System.out.print("Escolha o número do cliente para deletar: ");
++        int idx = Integer.parseInt(sc.nextLine()) - 1;
++        if (idx < 0 || idx >= clientes.size()) throw new Exception("Cliente não existe!");
++
++        clientes.remove(idx);
++        System.out.println("Cliente deletado.");
++    }
++}
+\ No newline at end of file
+Index: src/Moto.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Moto.java b/src/Moto.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Moto.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,10 @@
++public class Moto extends Veiculo {
++    public Moto(String modelo, String fabricante, int ano) throws Exception {
++        super(modelo, fabricante, ano, "Moto");
++    }
++    @Override
++    public String toString() {
++        return "Moto - Modelo: " + getModelo() + ", Fabricante: " + getFabricante() +
++                ", Ano: " + getAnoFabricacao() + ", Status: " + getStatus();
++    }
++}
+Index: src/PessoaFisica.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PessoaFisica.java b/src/PessoaFisica.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/PessoaFisica.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,9 @@
++public class PessoaFisica extends Cliente {
++    public PessoaFisica(String nome, String cpf, String contato) throws Exception {
++        super(nome, cpf, contato);
++    }
++    @Override
++    public String toString() {
++        return "Pessoa Física - Nome: " + getNome() + ", CPF: " + getCpf() + ", Contato: " + getContato();
++    }
++}
+Index: src/PessoaJuridica.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/PessoaJuridica.java b/src/PessoaJuridica.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/PessoaJuridica.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,9 @@
++public class PessoaJuridica extends Cliente {
++    public PessoaJuridica(String nome, String cpf, String contato) throws Exception {
++        super(nome, cpf, contato);
++    }
++    @Override
++    public String toString() {
++        return "Pessoa Jurídica - Nome: " + getNome() + ", CNPJ: " + getCpf() + ", Contato: " + getContato();
++    }
++}
+Index: src/Utilitario.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Utilitario.java b/src/Utilitario.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Utilitario.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,10 @@
++public class Utilitario extends Veiculo {
++    public Utilitario(String modelo, String fabricante, int ano) throws Exception {
++        super(modelo, fabricante, ano, "Utilitário");
++    }
++    @Override
++    public String toString() {
++        return "Utilitário - Modelo: " + getModelo() + ", Fabricante: " + getFabricante() +
++                ", Ano: " + getAnoFabricacao() + ", Status: " + getStatus();
++    }
++}
+Index: src/Veiculo.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Veiculo.java b/src/Veiculo.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Veiculo.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,38 @@
++public abstract class Veiculo {
++    private String modelo;
++    private String fabricante;
++    private int anoFabricacao;
++    private String tipo;
++    private String status; // "disponível" ou "vendido"
++
++    public Veiculo(String modelo, String fabricante, int anoFabricacao, String tipo) throws Exception {
++        if (anoFabricacao > 2025) {
++            throw new Exception("Ano de fabricação inválido!");
++        }
++        this.modelo = modelo;
++        this.fabricante = fabricante;
++        this.anoFabricacao = anoFabricacao;
++        this.tipo = tipo;
++        this.status = "disponível";
++    }
++
++    public String getModelo() { return modelo; }
++    public void setModelo(String modelo) { this.modelo = modelo; }
++
++    public String getFabricante() { return fabricante; }
++    public void setFabricante(String fabricante) { this.fabricante = fabricante; }
++
++    public int getAnoFabricacao() { return anoFabricacao; }
++    public void setAnoFabricacao(int anoFabricacao) throws Exception {
++        if (anoFabricacao > 2025) throw new Exception("Ano de fabricação inválido!");
++        this.anoFabricacao = anoFabricacao;
++    }
++
++    public String getTipo() { return tipo; }
++    public void setTipo(String tipo) { this.tipo = tipo; }
++
++    public String getStatus() { return status; }
++    public void setStatus(String status) { this.status = status; }
++
++    public abstract String toString();
++}
+Index: src/Venda.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/Venda.java b/src/Venda.java
+new file mode 100644
+--- /dev/null	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
++++ b/src/Venda.java	(revision 8e1967549b9ac7dce258be554af93d4a02f17093)
+@@ -0,0 +1,23 @@
++import java.time.LocalDate;
++
++public class Venda {
++    private Veiculo veiculo;
++    private Cliente cliente;
++    private LocalDate dataVenda;
++
++    public Venda(Veiculo veiculo, Cliente cliente) {
++        this.veiculo = veiculo;
++        this.cliente = cliente;
++        this.dataVenda = LocalDate.now();
++    }
++
++    public Veiculo getVeiculo() { return veiculo; }
++    public Cliente getCliente() { return cliente; }
++    public LocalDate getDataVenda() { return dataVenda; }
++
++    @Override
++    public String toString() {
++        return "Venda - Veículo: " + veiculo.getModelo() + " (" + veiculo.getTipo() + ")" +
++                ", Comprador: " + cliente.getNome() + ", Data: " + dataVenda;
++    }
++}
